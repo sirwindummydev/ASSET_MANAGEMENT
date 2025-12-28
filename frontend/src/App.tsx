@@ -6,6 +6,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 import "./App.css";
 import Dashboard from "./pages/Dashboard";
 import AllAssets from "./pages/AllAssets";
+import AssetDomain from "./pages/AssetDomain";
 function App() {
   return (
     <>
@@ -19,6 +20,10 @@ function App() {
               />
               <Route path="dashboard/overview" element={<Dashboard />} />
               <Route path="assets/all-assets" element={<AllAssets />} />
+              <Route
+                path="assets/asset-settings/asset-domain"
+                element={<AssetDomain />}
+              />
             </Route>
           </Routes>
         </BrowserRouter>
