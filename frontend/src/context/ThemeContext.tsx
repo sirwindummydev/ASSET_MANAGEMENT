@@ -3,10 +3,33 @@ import type { ReactNode } from "react";
 
 type Theme = "orange" | "blue" | "green" | "yellowOrange";
 
+interface ThemeConfig {
+  token: {
+    colorPrimary: string;
+    colorContrast?: string;
+    borderRadius: number;
+  };
+  components: {
+    Menu: {
+      itemSelectedBg: string;
+      itemSelectedColor: string;
+      itemHoverBg: string;
+      itemHoverColor: string;
+      itemBg: string;
+      subMenuItemBg: string;
+      itemActiveBg: string;
+      motionDurationSlow: string;
+      motionDurationMid: string;
+    };
+  };
+}
+
 const themes = {
   orange: {
     token: {
-      colorPrimary: "#ffa940",
+      // colorPrimary: "#ffa940",
+      colorPrimary: "#fa8c16",
+      colorContrast: "#092c4c",
       borderRadius: 6,
     },
     components: {
@@ -26,6 +49,7 @@ const themes = {
   blue: {
     token: {
       colorPrimary: "#1890ff",
+      colorContrast: "#002766",
       borderRadius: 6,
     },
     components: {
@@ -45,6 +69,7 @@ const themes = {
   green: {
     token: {
       colorPrimary: "#389e0d",
+      colorContrast: "#575757",
       borderRadius: 6,
     },
     components: {
@@ -64,6 +89,7 @@ const themes = {
   yellowOrange: {
     token: {
       colorPrimary: "#fa8c16",
+      colorContrast: "#613400",
       borderRadius: 6,
     },
     components: {
@@ -84,7 +110,7 @@ const themes = {
 
 interface ThemeContextType {
   themeName: Theme;
-  theme: any;
+  theme: ThemeConfig;
   setThemeName: (name: Theme) => void;
 }
 

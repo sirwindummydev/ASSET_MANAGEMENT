@@ -1,40 +1,36 @@
-import Reac from "react";
-import { Card, Row, Col, Typography, Space } from "antd";
+import React from "react";
 import SectionHeader from "../components/common/SectionHeader";
 import ActionButton from "../components/common/ActionButton";
-import SectionTable from "../components/common/SectionTable";
 import type { ColumnsType } from "antd/es/table";
+import { Input, Space, Tag } from "antd";
+import { ImportOutlined, SearchOutlined } from "@ant-design/icons";
+import SectionTable from "../components/common/SectionTable";
 
-import type { ReactNode } from "react";
-import { ImportOutlined } from "@ant-design/icons";
-
-interface AssetDomainProps {
+interface AssetBrandsProps {
   title?: string;
   subtitle?: string;
-  actions?: ReactNode;
-  token?: string;
-  domainId?: string;
-  domainName?: string;
+  actions?: React.ReactNode;
+  majorClassId?: string;
+  majorClassName?: string;
   description?: string;
   createdAt?: string;
   createdBy?: string;
-  tableComponent?: ReactNode;
+  tableComponent?: React.ReactNode;
+  token?: string;
 }
-
-const AssetDomain = (props: AssetDomainProps) => {
-  const { title = "Asset Domains", subtitle = "List of all asset domains" } =
+const AssetBrands = (props: AssetBrandsProps) => {
+  const { title = "Asset Brands", subtitle = "List of all asset brands" } =
     props;
-
-  const columns: ColumnsType<AssetDomainProps> = [
+  const columns: ColumnsType<AssetBrandsProps> = [
     {
-      title: "Domain ID",
-      dataIndex: "domainId",
-      key: "domainId",
+      title: "Brand ID",
+      dataIndex: "brandId",
+      key: "brandId",
     },
     {
-      title: "Domain Name",
-      dataIndex: "domainName",
-      key: "domainName",
+      title: "Brand Name",
+      dataIndex: "brandName",
+      key: "brandName",
     },
     {
       title: "Description",
@@ -43,12 +39,11 @@ const AssetDomain = (props: AssetDomainProps) => {
     },
     {
       title: "Created At",
-      dataIndex: "CreatedAt",
+      dataIndex: "createdAt",
       key: "createdAt",
     },
     { title: "Created By", dataIndex: "createdBy", key: "createdBy" },
   ];
-
   return (
     <>
       <Space orientation="vertical" size="large" style={{ width: "100%" }}>
@@ -57,19 +52,17 @@ const AssetDomain = (props: AssetDomainProps) => {
           subtitle={subtitle}
           token="primary"
           actions={[
-            <ActionButton label="Add New Domain" icon="+" token="primary" />,
+            <ActionButton label="Add New Brand" icon="+" token="primary" />,
             <ActionButton
-              label="Import Domain"
+              label="Import Brand"
               icon={<ImportOutlined />}
               token="contrast"
             />,
           ]}
         />
-
         <SectionTable columns={columns} />
       </Space>
     </>
   );
 };
-
-export default AssetDomain;
+export default AssetBrands;

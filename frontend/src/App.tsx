@@ -7,6 +7,11 @@ import "./App.css";
 import Dashboard from "./pages/Dashboard";
 import AllAssets from "./pages/AllAssets";
 import AssetDomain from "./pages/AssetDomain";
+import AssetMajorClass from "./pages/AssetMajorClass";
+import AssetCategory from "./pages/AssetCategory";
+import AssetSpecificType from "./pages/AssetSpecificType";
+import AssetBrands from "./pages/AssetBrands";
+import AssetUnits from "./pages/AssetUnits";
 function App() {
   return (
     <>
@@ -23,6 +28,26 @@ function App() {
               <Route
                 path="assets/asset-settings/asset-domain"
                 element={<AssetDomain />}
+              />
+              <Route
+                path="assets/asset-settings/asset-major-class"
+                element={<AssetMajorClass />}
+              />
+              <Route
+                path="assets/asset-settings/categories"
+                element={<AssetCategory />}
+              />
+              <Route
+                path="assets/asset-settings/specific-type"
+                element={<AssetSpecificType />}
+              />
+              <Route
+                path="assets/asset-settings/brands"
+                element={<AssetBrands />}
+              />
+              <Route
+                path="assets/asset-settings/units"
+                element={<AssetUnits />}
               />
             </Route>
           </Routes>

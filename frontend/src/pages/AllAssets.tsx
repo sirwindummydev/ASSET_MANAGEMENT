@@ -21,6 +21,7 @@ interface AllAssetsProps {
   assignedTo?: string;
   purchaseDate?: string;
   tableComponent?: ReactNode;
+  token?: string;
 }
 
 const AllAssets = (props: AllAssetsProps) => {
@@ -107,14 +108,14 @@ const AllAssets = (props: AllAssetsProps) => {
               key="add"
               label="Add New Asset"
               icon="+"
-              color="#fa8c16"
+              token="primary"
               onClick={handleAddNewAsset()}
             />,
             <ActionButton
               key="export"
               label="Import Assets"
               icon={<ImportOutlined />}
-              color="#092c4c"
+              token="contrast"
             />,
           ]}
         />

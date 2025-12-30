@@ -11,7 +11,7 @@ const contentStyle = {
 };
 
 function MainLayout() {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   return (
     <div

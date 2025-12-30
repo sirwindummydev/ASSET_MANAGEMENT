@@ -1,6 +1,7 @@
 import React from "react";
 import type { ReactNode } from "react";
 import { Button } from "antd";
+import { useTheme } from "../../context/ThemeContext";
 
 interface ActionButtonProps {
   icon?: ReactNode;
@@ -11,9 +12,14 @@ interface ActionButtonProps {
   style?: React.CSSProperties;
   fontSize?: number;
   disabled?: boolean;
+  token?: string;
 }
 
 const ActionButton = (props: ActionButtonProps) => {
+  const { theme } = useTheme();
+  const colorPrimary = theme.token.colorPrimary;
+  const colorContrast = theme.token.colorContrast;
+  const themeColor = props.token === "primary" ? colorPrimary : colorContrast;
   const {
     icon,
     label,
@@ -31,7 +37,7 @@ const ActionButton = (props: ActionButtonProps) => {
       onClick={onClick}
       disabled={disabled}
       style={{
-        backgroundColor: color,
+        backgroundColor: color || themeColor,
         color: textColor,
         borderColor: color,
         fontSize: fontSize,
