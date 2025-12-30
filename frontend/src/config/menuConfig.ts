@@ -313,8 +313,8 @@ export const routeToKeyMap: Record<string, { selected: string; open: string }> =
       selected: "assets-asset-settings-asset-domain",
       open: "asset-settings",
     },
-    "/assets/asset-settings/major-class": {
-      selected: "assets-asset-settings-major-class",
+    "/assets/asset-settings/asset-major-class": {
+      selected: "assets-asset-settings-asset-major-class",
       open: "asset-settings",
     },
     "/assets/asset-settings/categories": {
