@@ -9,6 +9,7 @@ import { useTheme } from "../../context/ThemeContext";
 // import "./css/SidebarLayout.css";
 interface SidebarLayoutProps {
   collapsed: boolean;
+
   setCollapsed: (collapsed: boolean) => void;
 }
 
@@ -87,6 +88,7 @@ const SidebarLayout = ({ collapsed, setCollapsed }: SidebarLayoutProps) => {
       <div
         style={{
           width: collapsed ? 80 : 250,
+
           minHeight: "100vh",
           background: "#fff",
           borderRight: "1px solid #f0f0f0",

@@ -2,6 +2,7 @@ import React from "react";
 import type { ReactNode } from "react";
 import { Row, Col, Typography, Divider } from "antd";
 const { Title, Text } = Typography;
+import { useTheme } from "../../context/ThemeContext";
 
 interface SectionHeaderProps {
   title: string;
@@ -14,9 +15,15 @@ interface SectionHeaderProps {
   extra?: ReactNode;
   titleColor?: string;
   actions?: ReactNode;
+  token?: string;
 }
 
 const SectionHeader = (props: SectionHeaderProps) => {
+  const { theme } = useTheme();
+  const colorPrimary = theme.token.colorPrimary;
+  const colorContrast = theme.token.colorContrast;
+  const themeColor = props.token === "primary" ? colorPrimary : colorContrast;
+
   const { title, subtitle, extra, titleColor, actions } = props;
   return (
     <>
@@ -25,7 +32,7 @@ const SectionHeader = (props: SectionHeaderProps) => {
           <Title
             level={2}
             style={{
-              color: titleColor || "#fa8c16",
+              color: titleColor || themeColor,
               paddingBottom: 0,
               marginBottom: 0,
             }}
